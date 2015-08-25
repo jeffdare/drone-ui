@@ -1,0 +1,52 @@
+extends layout
+
+block content
+    header
+      //.HeaderAbout
+        //.header-IBM-image
+          //div(style='float:left; font-weight:bold; font-size:18px;margin-left:-6px;') Drone Selfie
+          //| &#x9;&#x9;&#x9;
+          //div(style='float:right;')
+            //img(src='images/ibm-logo-top.png', alt='IBM Logo')
+    .col-sm-12
+      .Container-Div
+        img(src='images/connectIn12.PNG')
+    | &#x9;
+    | &#x9;
+    |     
+    .col-sm-12
+      .Container-Div
+        .Left-Container
+          h3.MeetTeam Live feed!
+          | &#x9;    
+          .Banner-Container
+            img(id='droneImage', style='width:100%; ', src='/users1')
+          | &#x9;&#x9;
+          .Description-Div
+            .Tabs Drone Parameters
+              #connStatus.Tabs-value-nc Not Connected
+            .Sub-Tab Battery %
+              meter#battery.Sub-Tab-battery(value='0', min='0', max='100', low='30')
+            .Sub-Tab Flying
+              #flying.Sub-Tab-Value 
+            .Sub-Tab Fly State
+              #flystate.Sub-Tab-Value 
+            .Sub-Tab Control State
+              #controlstate.Sub-Tab-Value 
+        | &#x9;   
+        .Right-Container
+          h3.MeetTeam Twitter
+          | &#x9;&#x9;
+          .Twitter-Container
+            a.twitter-timeline(href='https://twitter.com/hashtag/bluemix', data-widget-id='635460359587934208') #bluemix Tweets            
+              script.
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+    |     &#x9;
+    .col-sm-12
+      .Container-Div
+        p.Content
+          | Powered by IBM Bluemix & IBM Internet of Things Foundation.
+
+
+
