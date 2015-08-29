@@ -4,7 +4,7 @@ function refreshImage ()
 	console.log($("#droneImage").attr("src"));
 	$("#droneImage").attr("src", $("#droneImage").attr("src").split("?")[0] + "?" + new Date().getTime());
 }
-// setInterval(refreshImage,8000);
+setInterval(refreshImage,5000);
 
 var DEVICE_EVT_RE = /^iot-2\/type\/(.+)\/id\/(.+)\/evt\/(.+)\/fmt\/(.+)$/;
 var DEVICE_CMD_RE = /^iot-2\/type\/(.+)\/id\/(.+)\/cmd\/(.+)\/fmt\/(.+)$/;
@@ -30,7 +30,7 @@ function connectIotf (orgId, api_key, auth_token,deviceType, deviceId) {
 				$("#connStatus").text('Not Connected');
 				$("#connStatus").attr('class','Tabs-value-nc');
 			} else {
-				$("#connStatus").text('Connected');
+				$("#connStatus").text('Connected - '+match[2]);
 				$("#connStatus").attr('class','Tabs-value-c');
 			}
 		} else {
@@ -93,6 +93,6 @@ function connectIotf (orgId, api_key, auth_token,deviceType, deviceId) {
 	
 }
 
-connectIotf('eu8zyd','a-eu8zyd-0v4qumf4t3','Y95lRqIROX-0qepfXn', 'drone', 'drone1');
+connectIotf('eu8zyd','a-eu8zyd-0v4qumf4t3','Y95lRqIROX-0qepfXn', 'drone', '+');
 
 
